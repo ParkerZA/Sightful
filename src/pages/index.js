@@ -6,6 +6,12 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 
+function expand(e) {
+  const expand = e.target.parentNode.parentNode
+  expand.classList.add("expand")
+  console.log(expand)
+}
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -60,43 +66,22 @@ const IndexPage = () => (
       </div>
     </section>
 
-    <section className="what-we-offer">
-      <h2>What We Offer</h2>
-      <p>Payroll is payroll … right? Not quite.</p>
-      <p>
-        The payroll arena has developed into a minefield due to constant changes
-        in taxation and labour legislation. We can administer your payroll to
-        ensure that you comply with all regulations and ensure that you do not
-        face the risk of penalties from the South African Revenue Service.
-      </p>
-      <strong>
-        <p>
-          Sightfull Dynamics provides a TOTAL complete and comprehensive
-          personal service for our clients by offering specialised tailor made
-          solutions and services in the outsourcing and processing of your
-          salaries and wages for an incredibly low, low, price.
-        </p>
-      </strong>
-      <div className="stock2"></div>
-      <p>
-        With Sightfull Dynamics, you don’t engage with a Service Provider; you
-        get a committed business partner who views your business as if it was
-        our own.
-      </p>
-      <p>
-        For us, it’s all about being your “Best Partner”. We continue to provide
-        our clients with better and more innovative solutions and we work
-        closely with our clients to identify their requirements. It is our
-        desire to develop mutually beneficial long term Relationships.
-      </p>
-      <p>
-        The “Sightfull Dynamics” way has an impact on everything we do. We are
-        profoundly conscious of the difference we can make, and the difference
-        that comes from serving you with reliability and accuracy being the
-        corner stone of our relationship. The “Sightfull Dynamics” Way is a
-        unique way of offering value. It’s not what one does, but how one does
-        it that really counts.
-      </p>
+    <br></br>
+
+    <section className="offer">
+      <div className="big-image">
+        <div className="inner-what-we-mean">
+          <div className="what-we-mean-expanded"></div>
+          <div className="what-we-mean-expand">
+            <h3 onClick={expand}>What we mean...</h3>
+          </div>
+        </div>
+        <div className="inner-what-we-offer">
+          <div className="what-we-offer-expand">
+            <h3 onClick={expand}>What we offer...</h3>
+          </div>
+        </div>
+      </div>
     </section>
   </Layout>
 )

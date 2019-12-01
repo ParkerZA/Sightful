@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Sulphur+Point&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -11,7 +17,7 @@ body {
   margin-top: -20vh;
   height: 105vh;
   width: 100vw;
-  background-image: linear-gradient(to right bottom, #a19bf22f, #000000c4),
+  background-image: linear-gradient(to right bottom, #0000007c, #000000c4),
     url("../images/background-image.jpg");
   /* background-image: linear-gradient(
       to right bottom,
@@ -181,8 +187,11 @@ btn:visited {
 }
 
 .about-us {
-  height: 100vh;
+  /* display: block;
+  height: 150vh;
   width: 95vw;
+  margin-bottom: 50vh;
+  background-color: yellow; */
 }
 
 .about-us-header {
@@ -209,4 +218,81 @@ btn:visited {
 .what-we-offer {
   height: 100vh;
   width: 95vw;
+}
+
+.big-image {
+  background-image: url("../images/stock2.jpg");
+  height: 100vh;
+  width: 95vw;
+  background-size: cover;
+}
+
+.offer {
+  position: relative;
+}
+
+.inner-what-we-mean {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  clip-path: polygon(0 0, 30% 0%, 30% 30%, 0% 30%);
+  display: flex;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+.inner-what-we-mean h3 {
+  margin-top: 10vh;
+  color: #fff;
+  position: relative;
+  font-size: 1.8rem;
+  animation: moveInLeft 1s ease-out;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.what-we-mean-expand {
+  height: 20vh;
+  width: 30vw;
+}
+
+.inner-what-we-offer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  clip-path: polygon(100% 100%, 70% 100%, 70% 70%, 100% 70%);
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+.inner-what-we-offer h3 {
+  color: white;
+
+  font-size: 1.8rem;
+  animation: moveInRight 1s ease-out;
+  cursor: pointer;
+}
+
+.what-we-offer-expand {
+  /* margin-right: 20vw; */
+
+  height: 20vh;
+  width: 30vw;
+}
+
+.expand {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.what-we-mean-expanded {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/stock4.jpg");
+  background-size: cover;
+  display: none;
+  z-index: 0;
 }
